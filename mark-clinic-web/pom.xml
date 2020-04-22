@@ -11,8 +11,6 @@
 
     <artifactId>mark-clinic-web</artifactId>
 
-    <packaging>pom</packaging>
-
     <dependencies>
         <dependency>
             <artifactId>mark-clinic-data</artifactId>
@@ -49,8 +47,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
     </dependencies>
-
 
 </project>
