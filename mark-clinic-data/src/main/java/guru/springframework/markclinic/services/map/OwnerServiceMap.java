@@ -1,11 +1,11 @@
 package guru.springframework.markclinic.services.map;
 
 import guru.springframework.markclinic.model.Owner;
-import guru.springframework.markclinic.services.CrudService;
+import guru.springframework.markclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -30,5 +30,13 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     @Override
     public Owner save(Owner owner) {
         return super.save(owner.getId(), owner);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return map.values().stream()
+                .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
+                .findAny()
+                .orElseThrow();
     }
 }
