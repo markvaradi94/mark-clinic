@@ -2,9 +2,11 @@ package guru.springframework.markclinic.services.map;
 
 import guru.springframework.markclinic.model.Owner;
 import guru.springframework.markclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
